@@ -1,12 +1,15 @@
 package com.bmiedlar.twitter;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+import twitter4j.TwitterException;
+
 public class TwitterFeederApplication {
 
-  public static void main(String[] args) {
-    SpringApplication.run(TwitterFeederApplication.class, args);
+
+  public static void main(String[] args) throws InterruptedException, TwitterException {
+    var twitterClient = new TwitterClientService();
+    twitterClient.runTwitterClient();
   }
+
+
 }
